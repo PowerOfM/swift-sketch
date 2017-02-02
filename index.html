@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Swift Sketch</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid grey;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="600" height="400"></canvas>
+  <div id="info-shortcuts">
+    <p><b>z</b>: Undo</p>
+    <p><b>x</b>: Redo</p>
+    <!-- p><b>c</b>: Copy frame</p -->
+    <!-- p><b>v</b>: Paste frame here</p -->
+    <!-- p><b>d</b>: Duplicate current frame</p -->
+    <!-- p><b>b</b>: Previous frame (back)</p -->
+    <!-- p><b>n</b>: Next/new frame</p -->
+    <!-- p><b>m</b>: Move current frame</p -->
+    <!-- p><b>i</b>: Insert frame</p -->
+  </div>
+  <script>
+    const CTX_WIDTH = 600
+    const CTX_HEIGHT = 400
+
+    var canvas = document.getElementsByTagName('canvas')[0]
+    var ctx = canvas.getContext('2d')
+
+    // TODO: FRAMES!
+    // var frames = []
+
+    var strokes = []
+    var redo = []
+
+    var curStroke = null
+    var mousePressed = false
+    canvas.addEventListener('mousedown', strokeStart)
+    canvas.addEventListener('mousemove', strokeMove)
+    canvas.addEventListener('mouseup', strokeEnd)
+    canvas.addEventListener('mouseleave', strokeEnd)
+
+    function strokeStart (e) {
+      var x = e.layerX
+      var y = e.layerY
+      mousePressed = true
+      ctx.beginPath()
+      ctx.strokeStyle = 'blue'
+      ctx.moveTo(x, y)
+      curStroke = [{x, y}]
+    }
+    function strokeMove (e) {
+      if (!mousePressed) return
+      var x = e.layerX
+      var y = e.layerY
+      ctx.lineTo(x, y)
+      curStroke.push({x, y})
+      ctx.stroke()
+    }
+    function strokeEnd (e) {
+      if (!mousePressed) return
+      mousePressed = false
+      ctx.closePath()
+      strokes.push(curStroke)
+      renderScene(strokes)
+    }
+
+    document.addEventListener('keypress', function (e) {
+      if (mousePressed) return
+      if (e.key === 'z') {
+        if (strokes.length > 0) {
+          redo.push(strokes.pop())
+          renderScene(strokes)
+        }
+      } else if (e.key === 'x') {
+        if (redo.length > 0) {
+          strokes.push(redo.pop())
+          renderScene(strokes)
+        }
+      }
+    })
+
+    function renderScene (scene) {
+      ctx.clearRect(0, 0, CTX_WIDTH, CTX_HEIGHT)
+      ctx.beginPath()
+      for (var i = 0; i < scene.length; i++) {
+        let s = scene[i]
+        ctx.moveTo(s[0].x, s[0].y)
+        for (var j = 1; j < s.length; j++) {
+          ctx.lineTo(s[j].x, s[j].y)
+        }
+      }
+      ctx.stroke()
+      ctx.closePath()
+    }
+  </script>
+</body>
+</html>
