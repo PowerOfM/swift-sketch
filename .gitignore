@@ -1,0 +1,21 @@
+# Folders
+.idea
+.sass-cache
+.tscache
+dist/app
+dist/assets/css
+node_modules
+jspm_packages
+_test-output
+_temp
+
+# Files
+.baseDir.ts
+npm-debug.log
+debug.log
+!src/systemjs.config.extras.js
+!src/systemjs.config.js
+*.js.map
+e2e/**/*.js
+e2e/**/*.js.map
+*.sublime-*
