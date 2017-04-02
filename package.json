@@ -4,13 +4,15 @@
   "description": "Swift Sketch animation platform",
   "scripts": {
     "build": "grunt build",
+    "build:sass": "grunt build:sass",
     "build:pug": "grunt build:pug",
     "build:ts": "tsc -p src/",
+    "watch:sass": "grunt watch:sass",
     "watch:pug": "grunt watch:pug",
     "watch:ts": "tsc -p src/ -w",
     "serve": "lite-server -c=bs-config.json",
     "prestart": "npm run build",
-    "start": "concurrently \"npm run watch:pug\" \"npm run watch:ts\" \"npm run serve\"",
+    "start": "concurrently \"npm run watch:sass\" \"npm run watch:pug\" \"npm run watch:ts\" \"npm run serve\"",
     "lint": "standard ./src/**/*.ts -t verbose"
   },
   "keywords": [],
@@ -36,13 +38,14 @@
     "concurrently": "^3.2.0",
     "grunt": "^1.0.1",
     "grunt-contrib-pug": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-ts": "^6.0.0-beta.11",
     "lite-server": "^2.2.2",
     "lodash": "^4.16.4",
     "rimraf": "^2.5.4",
-    "typescript-standard": "^0.3.14",
-    "typescript": "~2.0.10"
+    "typescript": "~2.0.10",
+    "typescript-standard": "^0.3.14"
   },
   "repository": {}
 }

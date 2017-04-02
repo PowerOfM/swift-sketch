@@ -1,4 +1,6 @@
 {
+  "logLevel": "warn",
+  "injectChanges": true,
   "server": {
     "baseDir": "dist",
     "routes": {
