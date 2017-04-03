@@ -48,4 +48,15 @@ export class Frame {
     this.strokes = []
     if (ctx) this.draw(ctx)
   }
+  
+  /**
+   * Preforms cleanup.
+   * Note: MUST BE CALLED BEFORE SWITCING ACTIVE FRAME!
+   * @param {any} ctx Canvas context.
+   */
+  public unload (ctx:any) : void {
+    var img = new Image()
+    img.src = ctx.canvas.toDataURL()
+    this.image = img
+  }
 }
