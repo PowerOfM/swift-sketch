@@ -5,7 +5,7 @@ export class Frame {
   public onUpdate:EventEmitter<boolean>
   private redoStack:Stroke[]
 
-  constructor(public image:any, public strokes:Stroke[] = []) {
+  constructor(public image:any = null, public strokes:Stroke[] = []) {
     this.onUpdate = new EventEmitter<boolean>()
     this.redoStack = []
   }

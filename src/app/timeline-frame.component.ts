@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, Input } from '@angular/core'
+import { Component, ElementRef, ViewChild, OnInit, Input } from '@angular/core'
 import { Frame } from './frame'
 
 @Component({

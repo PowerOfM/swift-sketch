@@ -11,7 +11,7 @@ export class Stroke {
 
   smooth () : Stroke {
     var pts = this.points
-    var cps = []
+    var cps:number[] = []
     
     // There will be two control points for each "middle" point, 1 ... len-2e   
     var len = pts.length / 2 - 2
