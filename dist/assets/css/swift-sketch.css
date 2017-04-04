@@ -1,0 +1,37 @@
+.dimmer { display: none; position: absolute; top: 50px; bottom: 0; left: 0; width: 100%; background: white; z-index: 10; }
+.dimmer.active { display: block; }
+.dimmer.dimmer-inline { top: 0; bottom: 20px; }
+.dimmer .alert { margin: 20px; }
+.dimmer .spinner { font-size: 10px; margin: 20% auto 0; text-indent: -9999em; width: 40px; height: 40px; border-radius: 50%; background: #01cbfe; background: -moz-linear-gradient(left, #01cbfe 10%, rgba(34, 193, 85, 0) 42%); background: -webkit-linear-gradient(left, #01cbfe 10%, rgba(34, 193, 85, 0) 42%); background: -o-linear-gradient(left, #01cbfe 10%, rgba(34, 193, 85, 0) 42%); background: -ms-linear-gradient(left, #01cbfe 10%, rgba(34, 193, 85, 0) 42%); background: linear-gradient(to right, #01cbfe 10%, rgba(34, 193, 85, 0) 42%); position: relative; -webkit-animation: load3 1.4s infinite linear; animation: load3 1.4s infinite linear; -webkit-transform: translateZ(0); -ms-transform: translateZ(0); transform: translateZ(0); }
+.dimmer .spinner:before { width: 50%; height: 50%; background: #01cbfe; border-radius: 100% 0 0 0; position: absolute; top: 0; left: 0; content: ""; }
+.dimmer .spinner:after { background: white; width: 75%; height: 75%; border-radius: 50%; content: ""; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; }
+@-webkit-keyframes load3 { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@keyframes load3 { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+timeline { position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: #363c3e; border-top: 1px solid #4b5359; padding: 20px; }
+timeline timeline-frame, timeline .frame { display: inline-block; position: relative; width: 142.22222px; height: 80px; background: white; border: 2px solid #01cbfe; margin-right: 20px; }
+timeline timeline-frame canvas, timeline .frame canvas { width: 142.22222px; height: 80px; }
+timeline timeline-frame.frame-add, timeline .frame.frame-add { background: none; border: 2px solid #4b5359; cursor: pointer; transition: border 0.3s; }
+timeline timeline-frame.frame-add:after, timeline .frame.frame-add:after { content: "+"; position: absolute; top: 50%; left: 50%; font-size: 42px; margin: -28px 0 0 -10px; color: #4b5359; transition: color 0.3s; }
+timeline timeline-frame.frame-add:hover, timeline .frame.frame-add:hover { border: 2px solid #c9daea; }
+timeline timeline-frame.frame-add:hover:after, timeline .frame.frame-add:hover:after { color: #c9daea; }
+
+html, body { height: 100%; }
+
+.header { position: absolute; top: 0; left: 0; right: 0; height: 40px; background: #363c3e; border-bottom: 1px solid #4b5359; }
+.header .header-logo { padding: 0 15px; float: left; line-height: 40px; font-family: Quicksand, "Open Sans", sans-serif; font-size: 1.6rem; }
+.header .header-logo span { color: #01cbfe; }
+.header .header-center { float: left; padding-left: 40px; }
+.header .header-center a.header-link { width: 60px; display: inline-block; color: #a0a7ab; text-align: center; cursor: pointer; }
+.header .header-center a.header-link span.mdi { display: block; font-size: 1.5rem; line-height: 0; padding-top: 5px; margin-bottom: -3px; }
+.header .header-center a.header-link:hover { color: #c9daea; text-decoration: none; }
+
+.toolbar { position: absolute; top: 40px; left: 0; bottom: 120px; width: 60px; background: #363c3e; border-right: 1px solid #4b5359; }
+
+.sidebar { position: absolute; top: 40px; right: 0; bottom: 120px; width: 260px; background: #363c3e; border-left: 1px solid #4b5359; }
+.sidebar section { height: 50%; }
+.sidebar section .heading { padding: 10px; background: #4b5359; text-transform: uppercase; color: #eaeaea; cursor: default; }
+
+.artboard { position: absolute; top: 40px; left: 60px; right: 260px; bottom: 120px; background: #252a2b; padding: 50px; overflow: hidden; }
+.artboard canvas { position: absolute; background: white; }

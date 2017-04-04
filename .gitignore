@@ -2,8 +2,6 @@
 .idea
 .sass-cache
 .tscache
-dist/app
-dist/assets/css
 node_modules
 jspm_packages
 _test-output

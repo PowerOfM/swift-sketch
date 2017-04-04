@@ -1,0 +1,18 @@
+
+<div class="header">
+  <div class="header-logo">swift<span>sketch</span></div>
+  <div class="header-center"><a class="header-link"><span class="mdi mdi-undo"></span><span>Undo</span></a><a class="header-link"><span class="mdi mdi-redo"></span><span>Redo</span></a></div>
+</div>
+<div class="toolbar"></div>
+<div class="sidebar">
+  <section class="properties">
+    <div class="heading">PROPERTIES</div>
+  </section>
+  <section class="layers">
+    <div class="heading">LAYERS</div>
+  </section>
+</div>
+<div class="artboard">
+  <artboard-frame [frame]="curFrame"></artboard-frame>
+</div>
+<timeline [frames]="frames"></timeline>
