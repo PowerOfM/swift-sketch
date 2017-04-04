@@ -1,0 +1,95 @@
+@import "bootstrap/variables"
+@import "bootstrap/mixins"
+
+@import "swift-sketch/variables"
+@import "swift-sketch/dimmer"
+@import "swift-sketch/timeline"
+
+html, body
+  height: 100%
+
+.header
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  height: $size-header
+  background: $color-bg
+  border-bottom: $border
+
+  .header-logo
+    padding: 0 15px
+    float: left
+    line-height: $size-header
+    font-family: $headings-font-family
+    font-size: 1.6rem
+    span
+      color: $color-primary
+
+  .header-center
+    float: left
+    padding-left: 40px
+
+    a.header-link
+      width: 60px
+      display: inline-block
+      color: $color-fg
+      text-align: center
+      cursor: pointer
+      span.mdi
+        display: block
+        font-size: 1.5rem
+        line-height: 0
+        padding-top: 5px
+        margin-bottom: -3px
+
+      &:hover
+        color: $color-select
+        text-decoration: none
+
+
+.toolbar
+  position: absolute
+  top: $size-header
+  left: 0
+  bottom: $size-timeline
+  width: $size-toolbar
+  background: $color-bg
+  border-right: $border
+
+.sidebar
+  position: absolute
+  top: $size-header
+  right: 0
+  bottom: $size-timeline
+  width: $size-sidebar
+  background: $color-bg
+  border-left: $border
+  section
+    height: 50%
+    .heading
+      padding: 10px
+      background: $color-border
+      text-transform: uppercase
+      color: $color-light
+      cursor: default
+
+    &.properties
+    &.layers
+
+
+
+
+.artboard
+  position: absolute
+  top: $size-header
+  left: $size-toolbar
+  right: $size-sidebar
+  bottom: $size-timeline
+  background: $color-artboard
+  padding: 50px
+  overflow: hidden
+
+  canvas
+    position: absolute
+    background: white

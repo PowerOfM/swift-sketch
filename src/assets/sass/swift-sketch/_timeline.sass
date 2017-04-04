@@ -1,0 +1,44 @@
+@import "variables"
+
+timeline
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 0
+  height: $size-timeline
+  background: $color-bg
+  border-top: $border
+  padding: 20px
+
+  timeline-frame, .frame
+    display: inline-block
+    position: relative
+    width: 16/9*$size-timeline-frame
+    height: $size-timeline-frame
+    background: white
+    border: 2px solid $color-primary
+    margin-right: 20px
+
+    canvas
+      width: 16/9*$size-timeline-frame
+      height: $size-timeline-frame
+
+    &.frame-add
+      background: none
+      border: 2px solid $color-border
+      cursor: pointer
+      transition: border 0.3s
+      &:after
+        content: '+'
+        position: absolute
+        top: 50%
+        left: 50%
+        font-size: 42px
+        margin: -28px 0 0 -10px
+        color: $color-border
+        transition: color 0.3s
+
+      &:hover
+        border: 2px solid $color-select
+        &:after
+          color: $color-select

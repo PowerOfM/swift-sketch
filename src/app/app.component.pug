@@ -1,2 +1,20 @@
-.container
-  canvas(#canvas, width="{{CTX_WIDTH}}" height="{{CTX_HEIGHT}}")
+.header
+  .header-logo swift#[span sketch]
+  .header-center
+    a.header-link
+      span.mdi.mdi-undo
+      span Undo
+    a.header-link
+      span.mdi.mdi-redo
+      span Redo
+.toolbar
+.sidebar
+  section.properties
+    .heading PROPERTIES
+  section.layers
+    .heading LAYERS
+
+.artboard
+  artboard-frame([frame]='curFrame')
+
+timeline([frames]='frames')
